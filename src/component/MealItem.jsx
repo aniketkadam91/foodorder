@@ -6,6 +6,8 @@ const MealItem = ({ meal }) => {
   //console.log(meal.id);
   const addItemToCart = useContext(CartContext);
 
+  const homeurl = window.location.origin;
+
   const handleAddToCart = () => {
     //console.log(meal)
     addItemToCart.addItem(meal);
@@ -14,7 +16,7 @@ const MealItem = ({ meal }) => {
   return (
     <li className="meal-item">
       <article>
-        <img src={`http://localhost:5173/${meal.image}`} alt={meal.name} />
+        <img src={`${homeurl}/${meal.image}`} alt={meal.name} />
         <div>
           <h3>{meal.name}</h3>
           <p className="meal-item-price">
